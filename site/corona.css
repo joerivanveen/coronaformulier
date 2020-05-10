@@ -65,7 +65,6 @@ header, footer, section, .message {
 }
 header {
     margin-top: 2rem;
-    background-color: #ffc;
 }
 footer {
     margin: 2rem 0;
@@ -195,6 +194,11 @@ input[type="submit"]:hover {
 input[type="submit"] + .notice {
     margin-left: .2rem;
     background-color: #ffc;
+}
+.notice {
+    background-color: #ffc;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
 }
 
 @media (max-width: 888px) {

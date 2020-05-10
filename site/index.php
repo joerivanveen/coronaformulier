@@ -47,6 +47,11 @@ if (isset($_POST['corona']) and $_POST['corona'] === '') {
             $success = false;
         }
     }
+    if ($company === 'ruigehond') {
+        $success = false;
+        $message .= '<h2>Dummy formulier</h2>';
+        $message .= '<p>Bedankt voor het verzenden. Omdat dit een dummy formulier is gebeurt er verder niets met de gegevens.</p>';
+    }
     // form is considered valid
     if ($success === true) {
         // create object of PHPMailer class with boolean parameter which sets/unsets exception.
@@ -98,7 +103,7 @@ echo ' - online invullen, voldoe aan de eisen van het RIVM mbt corona."/> <meta 
 echo $a['logo'];
 echo '"/><meta property="og:image:width" content="1280"/><meta property="og:image:height" content="1280"/><meta property="og:image:secure_url" content="https://coronaformulier.nl/img/';
 echo $a['logo'];
-echo '"/><link rel="stylesheet" href="/corona.css?version=0.2"/><style type="text/css">input[type=submit] { background-color: #';
+echo '"/><link rel="stylesheet" href="/corona.css?version=0.3"/><style type="text/css">input[type=submit] { background-color: #';
 echo $a['color'];
 echo '; } h1, h2, h3, strong {color: #';
 echo $a['color'];
@@ -214,7 +219,7 @@ function echo_question(string $label, string $text, string $described_by = '') {
     echo '</li>';
 }
 // the contents
-echo '<header>Graag volledig invullen en verzenden!</header> 
+echo ' 
 <section>
 <p>Geachte heer / mevrouw,</p>
 
@@ -243,6 +248,7 @@ echo '">
 <h1>Gezondsheidscheck ';
 echo $a['name'];
 echo '</h1>
+<p><span class="notice">Graag volledig invullen en verzenden!</span></p>
 <h3>Stap 1: Uw gegevens</h3>
 <p>
 <fieldset>

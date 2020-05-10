@@ -185,7 +185,7 @@
     </section>
 </main>
 <footer>
-    <p>Het online coronaformulier wordt je aangeboden door Joeri van Veen. Ik ben freelance webdeveloper. Mijn bedrijf: <a href="https://ruigehond.nl">ruigehond.nl</a></p>
+    <p>Het online coronaformulier wordt je aangeboden door mij, Joeri van Veen. Ik ben freelance webdeveloper. Mijn bedrijf: <a href="https://ruigehond.nl">ruigehond.nl</a></p>
 </footer>
 </body>
 </html>
