@@ -79,13 +79,31 @@
             padding: 0 1rem;
             margin: 1rem 0;
         }
+
         footer {
             margin-bottom: 4rem;
+        }
+
+        aside {
+            position: absolute;
+            top: 1rem;
+            left: 820px;
+            padding: 1rem;
+            margin: 0 1rem;
+            background-color: #f0f0f0;
+            border: solid 1px #ddd;
+            width: 30vw;
+            max-width: 280px;
+        }
+
+        aside img {
+            width: 100%;
         }
 
         h1 {
             font-size: 150%;
         }
+
         h2 {
             font-size: 125%;
         }
@@ -93,6 +111,7 @@
         h2, p {
             margin-top: 1rem;
         }
+
         h1 + p,
         h2 + p {
             margin-top: 0;
@@ -114,17 +133,41 @@
             color: rgba(255, 89, 32, 1);
         }
 
+        @media (max-width: 1200px) {
+            aside {
+                position: relative;
+                left: 0;
+                float:right;
+                margin-bottom: 1rem;
+            }
+        }
+
         @media (max-width: 888px) {
             /* and (max-height: 650px)*/
             body,
             html {
                 font-size: 14pt;
             }
+
             h1, h2 {
                 font-weight: bold;
             }
             header, main, footer {
                 padding: 0 2%;
+            }
+            aside {
+                float: none;
+                display: block;
+                padding: 2%;
+                margin: 0 0 2rem 0;
+                width: 96%;
+                max-width: 96%;
+            }
+            aside img {
+                float: right;
+                max-width: 30vw;
+                max-height: 100%;
+                margin: 0 0 .8rem .8rem;
             }
         }</style>
 
@@ -132,60 +175,76 @@
 
 <body>
 <main>
-    <section>
-    <h1>Coronaformulier voor (kleine) praktijk</h1>
-        <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidscheck af te nemen en nogmaals de
-            maatregelen tegen corona onder de aandacht te brengen.</p>
-        <h2>Online formulier voor de gezondheidscheck</h2>
-        <p>Mijn vrouw is masseuse met een eigen praktijk en dit werd al gauw een hoop rompslomp, klanten die het
-            formulier gingen printen en met pen invullen en dan een foto terugstuurden... Ik heb meteen dit
-            online coronaformulier gemaakt zodat zij makkelijk en klantvriendelijk aan de richtlijnen van het RIVM kan
-            voldoen.</p>
-        <p><a href="/ruigehond">Voorbeeld coronaformulier</a></p>
-        <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers,
-            fysiotherapeuten en andere kleine praktijken waarbij 1 op 1 contact tussen behandelaar en cliënt is.</p>
-    </section>
-    <section>
-        <h2>Eigen formulier online</h2>
-        <p>Wil jij ook zo'n formulier gebruiken voor je praktijk? Stuur mij een e-mail:
-            <script>
-                function ruigehond() {
-                    var domain = 'ruigehond.nl', apenstaart = '@';
-                    return '<span><a href="mailto:hallo' + apenstaart + domain + '">E-mail: hallo' + apenstaart + domain + '</a></span>';
-                }
+    <aside>
+        <img src="/img/Joeri-van-Veen.jpg" alt="Foto van Joeri van Veen"/>
+        <p>Hallo, ik ben Joeri van Veen. Dit formulier heb ik gemaakt voor mijn vrouw Nicolien, zodat ze
+            klantvriendelijk en makkelijk kan voldoen aan deze eisen van het RIVM.</p>
+        <p>Terwijl ik het maakte dacht ik: meer mensen gaan dit nodig hebben, om hun eigen leven en dat van hun cliënten
+            makkelijker te maken. Daarom biedt ik het aan tegen een kleine vergoeding.</p>
+        <p>Hopelijk helpt het jou ook!</p>
+        <p>Groet, Joeri</p>
+    </aside>
+    <article>
+        <section>
+            <h1>Coronaformulier voor (kleine) praktijk</h1>
+            <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidscheck af te nemen en nogmaals de
+                maatregelen tegen corona onder de aandacht te brengen.</p>
+            <h2>Online formulier voor de gezondheidscheck</h2>
+            <p>Mijn vrouw is masseuse met een eigen praktijk en dit werd al gauw een hoop rompslomp, klanten die het
+                formulier gingen printen en met pen invullen en dan een foto terugstuurden... Ik heb meteen dit
+                online coronaformulier gemaakt zodat zij makkelijk en klantvriendelijk aan de richtlijnen van het RIVM
+                kan
+                voldoen.</p>
+            <p><a href="/ruigehond">Voorbeeld coronaformulier</a></p>
+            <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers,
+                fysiotherapeuten en andere kleine praktijken waarbij 1 op 1 contact tussen behandelaar en cliënt is.</p>
+        </section>
+        <section>
+            <h2>Eigen formulier online</h2>
+            <p>Wil jij ook zo'n formulier gebruiken voor je praktijk? Stuur mij een e-mail:
+                <script>
+                    function ruigehond() {
+                        var domain = 'ruigehond.nl', apenstaart = '@';
+                        return '<span><a href="mailto:hallo' + apenstaart + domain + '">E-mail: hallo' + apenstaart + domain + '</a></span>';
+                    }
 
-                document.write(ruigehond());
-            </script>
-            met daarin:
-        </p>
-        <ul>
-            <li>Je praktijknaam en adres</li>
-            <li>Het e-mailadres waar je de formulieren op wilt ontvangen</li>
-            <li>Het logo van je praktijk en evt. een huisstijl-kleur</li>
-            <li>De url van je website</li>
-            <li>Je eigen naam waarmee het formulier afsluit</li>
-        </ul>
-        <p>Ik stuur een factuur van <span>€ 25</span> ex btw eenmalige bijdrage, verder niets. Het formulier blijft online op
-            basis van fair use zolang we te maken hebben met corona. Gedurende die tijd houd ik het ook actueel n.a.v.
-            de richtlijnen van het RIVM.</p>
-    </section>
-    <section>
-        <h2>Voordelen online coronaformulier:</h2>
-        <p>Ik zou dit niet gebouwd hebben als er niet een paar specifieke voordelen waren t.o.v. een tabel <span>e-mailen</span> of een pdf uitprinten:</p>
-        <ul>
-            <li>Je klant kan heel eenvoudig de verplichte gezondheidscheck doen</li>
-            <li>Professionele uitstraling van je bedrijf</li>
-            <li>Verstuurt via beveiligde verbinding</li>
-            <li>Er wordt niets opgeslagen, dus AVG-proof</li>
-            <li>Beschermd tegen spam door Google recaptcha</li>
-            <li>Geen statistieken of cookies verder</li>
-            <li>Formulier houdt ik actueel n.a.v. richtlijnen RIVM</li>
-            <li>Werking en interactie voldoet aan huidige toegankelijkheids richtlijnen</li>
-        </ul>
-    </section>
+                    document.write(ruigehond());
+                </script>
+                met daarin:
+            </p>
+            <ul>
+                <li>Je praktijknaam en adres</li>
+                <li>Het e-mailadres waar je de formulieren op wilt ontvangen</li>
+                <li>Het logo van je praktijk en evt. een huisstijl-kleur</li>
+                <li>De url van je website</li>
+                <li>Je eigen naam waarmee het formulier afsluit</li>
+            </ul>
+            <p>Ik stuur een factuur van <span>€ 25</span> ex btw eenmalige bijdrage, verder niets. Het formulier blijft
+                online op
+                basis van fair use zolang we te maken hebben met corona. Gedurende die tijd houd ik het ook actueel
+                n.a.v.
+                de richtlijnen van het RIVM.</p>
+        </section>
+        <section>
+            <h2>Voordelen online coronaformulier:</h2>
+            <p>Ik zou dit niet gebouwd hebben als er niet een paar specifieke voordelen waren t.o.v. een tabel <span>e-mailen</span>
+                of een pdf uitprinten:</p>
+            <ul>
+                <li>Je klant kan heel eenvoudig de verplichte gezondheidscheck doen</li>
+                <li>Professionele uitstraling van je bedrijf</li>
+                <li>Verstuurt via beveiligde verbinding</li>
+                <li>Er wordt niets opgeslagen, dus AVG-proof</li>
+                <li>Beschermd tegen spam door Google recaptcha</li>
+                <li>Geen statistieken of cookies verder</li>
+                <li>Formulier houdt ik actueel n.a.v. richtlijnen RIVM</li>
+                <li>Werking en interactie voldoet aan huidige toegankelijkheids richtlijnen</li>
+            </ul>
+        </section>
+    </article>
 </main>
 <footer>
-    <p>Het online coronaformulier wordt je aangeboden door mij, Joeri van Veen. Ik ben freelance webdeveloper. Mijn bedrijf: <a href="https://ruigehond.nl">ruigehond.nl</a></p>
+    <p>Het online coronaformulier wordt je aangeboden door mij, Joeri van Veen. Ik ben freelance webdeveloper. Mijn
+        bedrijf: <a href="https://ruigehond.nl">ruigehond.nl</a></p>
 </footer>
 </body>
 </html>

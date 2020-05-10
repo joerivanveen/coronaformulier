@@ -8,7 +8,7 @@ if (isset($_GET['company']) and isset($a[$company = $_GET['company']])) {
     $a = $a[$company];
 } else {
     //header('Location: https://ruigehond.nl/', true, 301);
-    header('Location: /ruigehond.php',\true,307);
+    header('Location: /ruigehond.php', \true, 307);
     die();
 }
 
@@ -118,7 +118,7 @@ echo '" async defer></script>';
     <script>
         function ruigehond_setup() {
             var form = document.querySelector('form'),
-                valid;
+                valid, scroll_to_element;
             form.querySelectorAll('input[type="submit"]').forEach(function (el) {
                 el.addEventListener('blur', function () {
                     // remove notices
@@ -134,7 +134,7 @@ echo '" async defer></script>';
                 });
                 form.querySelectorAll('input').forEach(function (el) {
                     var n, r;
-                    if (valid === true) { el.focus(); }
+                    if (valid === true) scroll_to_element = el;
                     if (el.type === 'radio') {
                         r = form.querySelectorAll('input[name="' + el.name + '"]');
                         if (false === r[0].checked && false === r[1].checked) valid = false;
@@ -147,6 +147,11 @@ echo '" async defer></script>';
                     form.querySelectorAll('input[type="submit"]').forEach(function (el) {
                         el.removeAttribute('disabled');
                     });
+                    try {
+                        window.scrollBy(0, scroll_to_element.getBoundingClientRect().top - 80);
+                        scroll_to_element.focus();
+                    } catch (e) {
+                    }
                     e.preventDefault();
                     e.stopPropagation();
                     return false;
@@ -194,7 +199,8 @@ if ($message !== '') {
     echo '</div>';
 }
 // shortcut for li / question items
-function echo_question(string $label, string $text, string $described_by = '') {
+function echo_question(string $label, string $text, string $described_by = '')
+{
     if ($described_by !== '') {
         $described_by_id = hash('md5', $described_by);
     }
@@ -205,7 +211,7 @@ function echo_question(string $label, string $text, string $described_by = '') {
     if (isset($described_by_id)) {
         echo '" aria-describedby="';
         echo $described_by_id;
-        }
+    }
     echo '" value="Ja"> Ja</label><label><input type="radio" name="';
     echo $label;
     echo '" value="Nee"> Nee</label></fieldset>';
@@ -218,6 +224,7 @@ function echo_question(string $label, string $text, string $described_by = '') {
     }
     echo '</li>';
 }
+
 // the contents
 echo ' 
 <section>
@@ -233,6 +240,15 @@ U kunt geen afspraak maken als u behoort tot de groep kwetsbare mensen zoals ged
 <li>U wordt verzocht alleen te verschijnen op de afspraak. </li>
 <li>U kunt geen gebruik maken van het toilet in de praktijk. </li>
 </ul>
+
+<p>';
+echo $a['sign'];
+echo ' (<a href="';
+echo $a['site'];
+echo '">';
+echo $a['name'];
+echo '</a>)</p>
+
 <img src="/img/';
 echo $a['logo'];
 echo '" alt="Logo praktijk ';
@@ -251,7 +267,6 @@ echo '</h1>
 <p><span class="notice">Graag volledig invullen en verzenden!</span></p>
 <h3>Stap 1: Uw gegevens</h3>
 <p>
-<fieldset>
 <label>Naam:<input type="text" name="naam" autocomplete="name"/><br/></label>
 <label>Geboortedatum:<input type="text" name="geboortedatum" autocomplete="bday"/></label>
 </p> 
@@ -259,7 +274,6 @@ echo '</h1>
 <p>
 <label>Vervoermiddel praktijk (fiets, lopen, auto etc.):<input type="text" name="vervoermiddel"/></label>
 </p>
-</fieldset>
 </section>
 <section>
 <h3>Stap 2: Aandoeningen</h3>
@@ -340,11 +354,6 @@ echo '</p>
 <footer>
 <p>Dit formulier maakt gebruik van Google recaptcha tegen spam. Verder worden er geen cookies geplaatst en al helemaal geen statistieken bijgehouden.</p>
 <p>Ook zo&rsquo;n mooi formulier voor je praktijk? <a href="/ruigehond.php">Meer informatie</a></p>
-<p>Dit formulier is voor <a href="';
-echo $a['site'];
-echo '">';
-echo $a['name'];
-echo '</a>.</p>
 </footer>';
 // end
 echo '</body></html>';
