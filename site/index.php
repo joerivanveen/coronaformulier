@@ -66,7 +66,7 @@ if (isset($_POST['corona']) and $_POST['corona'] === '') {
             $mail->Port = 587;   // port for SMTP
             $mail->setFrom('coronaformulier@gmail.com', 'Niet beantwoorden'); // sender's email and name
             $mail->addAddress($a['mail'], $a['sign']);  // receiver's email and name
-            $mail->Subject = 'Gezondheidscheck van ' . htmlentities($_POST['naam']);
+            $mail->Subject = 'Gezondheidcheck van ' . htmlentities($_POST['naam']);
             $str = '';
             foreach ($_POST as $item => $value) {
                 if ($item === 'g-recaptcha-token') continue;
@@ -87,7 +87,7 @@ if (isset($_POST['corona']) and $_POST['corona'] === '') {
 // head
 echo '<!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>';
 echo $a['name'];
-echo ' ~ corona checklist en maatregelen</title><meta name="description" content="Corona maatregelen en gezondheidscheck cliënt - ';
+echo ' ~ corona checklist en maatregelen</title><meta name="description" content="Corona maatregelen en gezondheidcheck cliënt - ';
 echo $a['name'];
 echo ' - online invullen, voldoe aan de eisen van het RIVM mbt corona."/><link rel="canonical" href="https://coronaformulier.nl/';
 echo $company;
@@ -97,7 +97,7 @@ echo '"/><meta property="og:site_name" content="';
 echo $company;
 echo '"/><meta property="og:title" content="';
 echo $a['name'];
-echo ' ~ corona checklist en maatregelen"/><meta property="og:type" content="website"/><meta property="og:description" content="Corona maatregelen en gezondheidscheck cliënt - ';
+echo ' ~ corona checklist en maatregelen"/><meta property="og:type" content="website"/><meta property="og:description" content="Corona maatregelen en gezondheidcheck cliënt - ';
 echo $a['name'];
 echo ' - online invullen, voldoe aan de eisen van het RIVM mbt corona."/> <meta property="og:image" content="https://coronaformulier.nl/img/';
 echo $a['logo'];
@@ -111,7 +111,9 @@ echo ';} input[type="radio"]:focus { outline: solid #';
 echo $a['color'];
 echo ' 4px; } input[type="text"]:focus { background-image:url(\'data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23';
 echo $a['color'];
-echo '%22%20d%3D%22M24%201.5L.31%2012.19%2024%2022.89z%22%2F%3E%3C%2Fsvg%3E\'); }</style><script src="https://www.google.com/recaptcha/api.js?render=';
+echo '%22%20d%3D%22M24%201.5L.31%2012.19%2024%2022.89z%22%2F%3E%3C%2Fsvg%3E\'); }</style>';
+// google recaptcha
+echo '<script src="https://www.google.com/recaptcha/api.js?render=';
 echo $recaptcha_site_key;
 echo '" async defer></script>';
 ?>
@@ -218,9 +220,9 @@ function echo_question(string $label, string $text, string $described_by = '')
     if (isset($described_by_id)) {
         echo '<p class="describedby" id="';
         echo $described_by_id;
-        echo '">';
+        echo '"><em>';
         echo $described_by;
-        echo '</p>';
+        echo '</em></p>';
     }
     echo '</li>';
 }
@@ -228,6 +230,9 @@ function echo_question(string $label, string $text, string $described_by = '')
 // the contents
 echo ' 
 <section>
+<h1>Gezondsheidscheck ';
+echo $a['name'];
+echo '</h1>
 <p>Geachte heer / mevrouw,</p>
 
 <p>Het Covid-19 (Corona) virus houdt iedereen bezig.<br/> 
@@ -237,8 +242,8 @@ U kunt geen afspraak maken als u behoort tot de groep kwetsbare mensen zoals ged
 <ul>
 <li>Algemeen geldt: geen handen schudden, regelmatig handen wassen, hoesten en niezen in de ellenboog en gebruik van papieren zakdoekjes.</li> 
 <li>Wanneer er tussen de afspraakbevestiging en de afspraak zelf verschijnselen optreden, wordt u verzocht de afspraak te annuleren.</li> 
-<li>U wordt verzocht alleen te verschijnen op de afspraak. </li>
-<li>U kunt geen gebruik maken van het toilet in de praktijk. </li>
+<li>U wordt verzocht alleen te verschijnen op de afspraak.</li>
+<li>U kunt geen gebruik maken van het toilet in de praktijk.</li>
 </ul>
 
 <p>';
@@ -253,6 +258,8 @@ echo '</a>)</p>
 echo $a['logo'];
 echo '" alt="Logo praktijk ';
 echo $a['name'];
+echo ' ';
+echo $a['site'];
 echo '"/>
 </section>
 <form method="post" action="/';
@@ -261,11 +268,8 @@ echo '">
 <input type="hidden" name="corona" value=""/>
 <input type="hidden" name="g-recaptcha-token" value=""/>
 <section>
-<h1>Gezondsheidscheck ';
-echo $a['name'];
-echo '</h1>
 <p><span class="notice">Graag volledig invullen en verzenden!</span></p>
-<h3>Stap 1: Uw gegevens</h3>
+<h3>Uw gegevens</h3>
 <p>
 <label>Naam:<input type="text" name="naam" autocomplete="name"/><br/></label>
 <label>Geboortedatum:<input type="text" name="geboortedatum" autocomplete="bday"/></label>
@@ -276,7 +280,7 @@ echo '</h1>
 </p>
 </section>
 <section>
-<h3>Stap 2: Aandoeningen</h3>
+<h3>Stap 1: Risicogroep bepaling</h3>
 <ol>';
 echo_question('longprobleem', 'Heeft u een chronische luchtweg- of longprobleem en daar zo veel last van dat u onder behandeling van een longarts bent?');
 echo_question('hartpatiënt', 'Bent u chronische hartpatiënt en heeft u daar zoveel last van dat u onder behandeling bent van een cardioloog?');
@@ -290,7 +294,7 @@ echo '
 </ol>
 </section>
 <section>
-<h3>Stap 3: Vragen voor de gezondheidscheck.</h3>
+<h3>Stap 2: Vragen voor de gezondheidcheck.</h3>
 <p>Wanneer u één van onderstaande vragen met ‘Ja’ beantwoordt, mag u niet naar de afspraak komen. De afspraak moet worden uitgesteld totdat op elke vraag ‘Nee’ geantwoord kan worden.</p>
 <ol start="9">';
 echo_question('milde_klachten', 'Heeft u de afgelopen 24 uur of op dit moment één of meerdere van de volgende (milde) klachten: neusverkoudheid, hoesten, benauwdheid en/of koorts (vanaf 38 graden Celsius)?');
@@ -302,7 +306,7 @@ echo '
 </ol>
 </section>
 <section>
-<h3>Stap 4: Controlevraag</h3>
+<h3>Stap 3: Controlevraag</h3>
 <ul>
 <li>Indien deze vraag met ‘Ja’ wordt beantwoord dan kan er behandeld worden.</li> 
 <li>Indien alles ‘Nee’ dan is behandeling mogelijk na verdere anamnese en risico inschatting door behandelaar in samenspraak met u, de cliënt.</li>
@@ -314,6 +318,8 @@ echo '
 </ol>
 <p><em>Uw gegevens worden verzonden via een beveiligde verbinding, rechtstreeks naar de praktijk.<br/>Er wordt niets opgeslagen.</em></p>
 <p><input type="submit" value="Verzenden"/></p>
+<p>Op het moment van de afspraak zal de behandelaar vragen of er geen veranderingen zijn opgetreden in de situatie. Zo niet dan dient u mondeling te verklaren dat u het formulier naar waarheid hebt ingevuld.<br/>
+Alleen samen kunnen we de verspreiding van corona beperken.</p>
 </section>
 <section>
 <h2>Aanvullende maatregelen in de praktijk:</h2>

@@ -186,6 +186,7 @@ input[type="submit"] {
     border-radius: 15px;
     transition: all .2s; /* margin-top .2s, margin-bottom .2s;*/
 }
+input[type="submit"]:focus,
 input[type="submit"]:hover {
     margin-top: -5px;
     margin-bottom: 5px;

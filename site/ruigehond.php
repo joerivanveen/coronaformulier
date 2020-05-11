@@ -6,10 +6,10 @@
     <link rel="canonical" href="https://coronaformulier.nl/ruigehond.php"/>
     <meta property="og:url" content="https://coronaformulier.nl/ruigehond.php"/>
     <meta property="og:site_name" content="coronaformulier"/>
-    <meta property="og:title" content="Coronaformulier voor kleine praktijk - ruige hond"/>
+    <meta property="og:title" content="Coronaformulier voor kleine praktijk"/>
     <meta property="og:type" content="website"/>
     <meta property="og:description"
-          content="Een eenvoudig coronaformulier voor een kleine praktijk, ontwikkeld door ruige hond."/>
+          content="Voldoe aan de eisen van het RIVM mbt gezondheidcheck / triage met dit eenvoudige formulier. Professionele uitstraling."/>
     <meta property="og:image" content="http://ruigehond.nl/media/ruigehond.jpg"/>
     <meta property="og:image:secure_url" content="https://ruigehond.nl/media/ruigehond.jpg"/>
     <meta name="keywords" content="corona formulier praktijk"/>
@@ -137,7 +137,7 @@
             aside {
                 position: relative;
                 left: 0;
-                float:right;
+                float: right;
                 margin-bottom: 1rem;
             }
         }
@@ -152,17 +152,21 @@
             h1, h2 {
                 font-weight: bold;
             }
+
             header, main, footer {
                 padding: 0 2%;
             }
+
             aside {
                 float: none;
                 display: block;
                 padding: 2%;
-                margin: 0 0 2rem 0;
+                margin: 0 -4% 2rem 0;
                 width: 96%;
                 max-width: 96%;
+                border: none;
             }
+
             aside img {
                 float: right;
                 max-width: 30vw;
@@ -180,21 +184,23 @@
         <p>Hallo, ik ben Joeri van Veen. Dit formulier heb ik gemaakt voor mijn vrouw Nicolien, zodat ze
             klantvriendelijk en makkelijk kan voldoen aan deze eisen van het RIVM.</p>
         <p>Terwijl ik het maakte dacht ik: meer mensen gaan dit nodig hebben, om hun eigen leven en dat van hun cliënten
-            makkelijker te maken. Daarom biedt ik het aan tegen een kleine vergoeding.</p>
+            makkelijker te maken. Daarom bied ik het aan tegen een kleine vergoeding.</p>
         <p>Hopelijk helpt het jou ook!</p>
         <p>Groet, Joeri</p>
     </aside>
     <article>
         <section>
             <h1>Coronaformulier voor (kleine) praktijk</h1>
-            <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidscheck af te nemen en nogmaals de
+            <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidcheck (triage) af te nemen en nogmaals de
                 maatregelen tegen corona onder de aandacht te brengen.</p>
-            <h2>Online formulier voor de gezondheidscheck</h2>
-            <p>Mijn vrouw is masseuse met een eigen praktijk en dit werd al gauw een hoop rompslomp, klanten die het
-                formulier gingen printen en met pen invullen en dan een foto terugstuurden... Ik heb meteen dit
-                online coronaformulier gemaakt zodat zij makkelijk en klantvriendelijk aan de richtlijnen van het RIVM
-                kan
-                voldoen.</p>
+            <h2>Online formulier voor de gezondheidcheck</h2>
+            <p>Mijn vrouw is masseuse met een eigen praktijk. Met iedereen bellen een dag van tevoren om de vragenlijst
+                en de maatregelen door te nemen ging al meteen heel veel tijd kosten, vooral omdat Nicolien ook heel
+                sociaal is.
+                Ze maakte een formulier in Word maar dit werd een rompslomp, klanten gingen het formulier printen,
+                met pen invullen en dan een foto terugsturen...</p>
+            <p>Ik heb dit online coronaformulier gemaakt dat zij naar elke cliënt kan appen of e-mailen, zodat zij makkelijk en
+                klantvriendelijk aan de richtlijnen van het RIVM kan voldoen. Het staat bovendien heel netjes naar klanten toe.</p>
             <p><a href="/ruigehond">Voorbeeld coronaformulier</a></p>
             <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers,
                 fysiotherapeuten en andere kleine praktijken waarbij 1 op 1 contact tussen behandelaar en cliënt is.</p>
@@ -228,16 +234,22 @@
         <section>
             <h2>Voordelen online coronaformulier:</h2>
             <p>Ik zou dit niet gebouwd hebben als er niet een paar specifieke voordelen waren t.o.v. een tabel <span>e-mailen</span>
-                of een pdf uitprinten:</p>
+                of een document uitprinten:</p>
             <ul>
-                <li>Je klant kan heel eenvoudig de verplichte gezondheidscheck doen</li>
+                <li>Eenvoudig: je appt of e-mailt steeds dezelfde link</li>
                 <li>Professionele uitstraling van je bedrijf</li>
+                <li>Super makkelijke manier om aan de eisen van het RIVM te voldoen mbt de triage</li>
+                <li>Je klant kan heel eenvoudig de verplichte gezondheidcheck (triage) doen</li>
+                <li>Formulier houd ik samen met Nicolien actueel n.a.v. richtlijnen RIVM</li>
+            </ul>
+            <h2>Professioneel</h2>
+            <p>Technisch is het formulier state of the art (ik lever geen half werk).</p>
+            <ul>
                 <li>Verstuurt via beveiligde verbinding</li>
+                <li>Beschermd tegen spam door Google recaptcha (nieuwste versie)</li>
+                <li>Geen statistieken of cookies verder, gebruik is 100% anoniem</li>
+                <li>Werking en interactie voldoen aan huidige toegankelijkheids richtlijnen</li>
                 <li>Er wordt niets opgeslagen, dus AVG-proof</li>
-                <li>Beschermd tegen spam door Google recaptcha</li>
-                <li>Geen statistieken of cookies verder</li>
-                <li>Formulier houdt ik actueel n.a.v. richtlijnen RIVM</li>
-                <li>Werking en interactie voldoet aan huidige toegankelijkheids richtlijnen</li>
             </ul>
         </section>
     </article>
@@ -245,6 +257,7 @@
 <footer>
     <p>Het online coronaformulier wordt je aangeboden door mij, Joeri van Veen. Ik ben freelance webdeveloper. Mijn
         bedrijf: <a href="https://ruigehond.nl">ruigehond.nl</a></p>
+    <p>&nbsp;</p>
 </footer>
 </body>
 </html>
