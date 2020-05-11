@@ -118,35 +118,48 @@ echo '" async defer></script>';
     <script>
         function ruigehond_setup() {
             var form = document.querySelector('form'),
-                valid, scroll_to_element;
-            form.querySelectorAll('input[type="submit"]').forEach(function (el) {
-                el.addEventListener('blur', function () {
+                valid, scroll_to_element,
+                // for the loops (don't use forEach, doesn't work on old iPad for instance)
+                i, len, elements, el, i2, len2, elements2, el2, n, r;
+            for (i = 0,
+                     elements = form.querySelectorAll('input[type="submit"]'),
+                     len = elements.length; i < len; ++i) {
+                elements[i].addEventListener('blur', function () {
                     // remove notices
-                    document.querySelectorAll('.notice').forEach(function (el) {
-                        el.parentNode.removeChild(el);
-                    });
+                    for (i2 = 0,
+                             elements2 = document.querySelectorAll('.sending'),
+                             len2 = elements2.length; i2 < len2; ++i2) {
+                        el2 = elements2[i2];
+                        el2.parentNode.removeChild(el2);
+                    }
                 });
-            });
+            }
             form.addEventListener('submit', function (e) {
                 valid = true; // form is valid until proven otherwise
-                form.querySelectorAll('input[type="submit"]').forEach(function (el) {
-                    el.setAttribute('disabled', 'disabled');
-                });
-                form.querySelectorAll('input').forEach(function (el) {
-                    var n, r;
+                for (i = 0,
+                         elements = form.querySelectorAll('input[type="submit"]'),
+                         len = elements.length; i < len; ++i) {
+                    elements[i].setAttribute('disabled', 'disabled');
+                }
+                for (i = 0,
+                         elements = form.querySelectorAll('input'),
+                         len = elements.length; i < len; ++i) {
+                    el = elements[i];
                     if (valid === true) scroll_to_element = el;
                     if (el.type === 'radio') {
                         r = form.querySelectorAll('input[name="' + el.name + '"]');
                         if (false === r[0].checked && false === r[1].checked) valid = false;
-                    } else if ((n = el.name) === 'naam' || n === 'geboortedatum' || n === 'vervoersmiddel') {
+                    } else if ((n = el.name) === 'naam' || n === 'geboortedatum' || n === 'vervoermiddel') {
                         if (el.value === '') valid = false;
                     }
-                });
+                }
                 if (valid === false) {
                     alert('Vul het volledige formulier in alstublieft');
-                    form.querySelectorAll('input[type="submit"]').forEach(function (el) {
-                        el.removeAttribute('disabled');
-                    });
+                    for (i = 0,
+                             elements = form.querySelectorAll('input[type="submit"]'),
+                             len = elements.length; i < len; ++i) {
+                        elements[i].removeAttribute('disabled');
+                    }
                     try {
                         window.scrollBy(0, scroll_to_element.getBoundingClientRect().top - 80);
                         scroll_to_element.focus();
@@ -156,9 +169,11 @@ echo '" async defer></script>';
                     e.stopPropagation();
                     return false;
                 }
-                form.querySelectorAll('input[type="submit"]').forEach(function (el) {
-                    el.insertAdjacentHTML('afterend', '<span class="notice">Bezig met verzenden</span>');
-                });
+                for (i = 0,
+                         elements = form.querySelectorAll('input[type="submit"]'),
+                         len = elements.length; i < len; ++i) {
+                    elements[i].insertAdjacentHTML('afterend', '<span class="notice sending">Bezig met verzenden</span>');
+                }
                 try {
                     grecaptcha.execute('<?php echo $recaptcha_site_key ?>', {action: 'form_submit'}).then(function (token) {
                         // set token in form
@@ -169,9 +184,10 @@ echo '" async defer></script>';
                 } catch (thrown_error) {
                     console.error(thrown_error);
                     alert('Recaptcha error');
-                    form.querySelectorAll('input[type="submit"]').forEach(function (el) {
-                        el.removeAttribute('disabled');
-                    });
+                    for (i = 0,
+                             elements = form.querySelectorAll('input[type="submit"]'),
+                             len = elements.length; i < len; ++i)
+                        elements[i].removeAttribute('disabled');
                 }
                 e.preventDefault();
                 e.stopPropagation();
