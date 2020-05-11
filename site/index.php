@@ -310,7 +310,7 @@ echo '
 </ol>
 </section>
 <section>
-<h3>Stap 2: Vragen voor de gezondheidcheck.</h3>
+<h3>Stap 2: Vragen voor de gezondheidcheck</h3>
 <p>Wanneer u één van onderstaande vragen met ‘Ja’ beantwoordt, mag u niet naar de afspraak komen. De afspraak moet worden uitgesteld totdat op elke vraag ‘Nee’ geantwoord kan worden.</p>
 <ol start="9">';
 echo_question('milde_klachten', 'Heeft u de afgelopen 24 uur of op dit moment één of meerdere van de volgende (milde) klachten: neusverkoudheid, hoesten, benauwdheid en/of koorts (vanaf 38 graden Celsius)?');
