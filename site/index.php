@@ -61,7 +61,7 @@ if (isset($_POST['corona']) and $_POST['corona'] === '') {
             $mail->Host = 'smtp.gmail.com'; // SMTP host as gmail
             $mail->SMTPAuth = true;  // enable smtp authentication
             $mail->Username = 'coronaformulier@gmail.com';  // sender gmail host
-            $mail->Password = 'R5%-+djewk'; // sender gmail host password
+            $mail->Password = $gmail_pass; // sender gmail host password
             $mail->SMTPSecure = 'tls';  // for encrypted connection
             $mail->Port = 587;   // port for SMTP
             $mail->setFrom('coronaformulier@gmail.com', 'Niet beantwoorden'); // sender's email and name
@@ -252,7 +252,7 @@ echo '</h1>
 <p>Geachte heer / mevrouw,</p>
 
 <p>Het Covid-19 (Corona) virus houdt iedereen bezig.<br/> 
-Zoals u wellicht al vernomen heeft zullen wij vanaf 11 mei 2020 open gaan. We maken alleen afspraken met mensen waarvan we met vrij grote zekerheid weten dat ze gezond zijn en dat ze niet vallen onder de risicogroepen zoals gedefinieerd door het RIVM.<br/> 
+Zoals u wellicht al vernomen heeft zijn wij sinds 11 mei 2020 weer open. We maken alleen afspraken met mensen waarvan we met vrij grote zekerheid weten dat ze gezond zijn en dat ze niet vallen onder de risicogroepen zoals gedefinieerd door het RIVM.<br/> 
 U kunt geen afspraak maken als u behoort tot de groep kwetsbare mensen zoals gedefinieerd door de RIVM. Kwetsbare personen of mensen met een zwakke gezondheid zijn mensen van 70 jaar en ouder en mensen die een van de hieronder in de vragen vermelde aandoeningen hebben.</p>
 
 <ul>
@@ -374,7 +374,9 @@ echo '</p>
 </section>
 </form>
 <footer>
-<p>Dit formulier maakt gebruik van Google recaptcha tegen spam. Verder worden er geen cookies geplaatst en al helemaal geen statistieken bijgehouden.</p>
+<p>Dit formulier maakt gebruik van Google recaptcha tegen spam. Verder worden er geen cookies geplaatst of statistieken bijgehouden.<br/>';
+echo $a['name'];
+echo ' heeft een data verwerkersovereenkomst gesloten met ruige hond, de aanbieder van dit formulier, waarin omschreven staat dat uw gegevens via aan beveiligde verbinding rechtstreeks worden doorgegeven, niet in te zien zijn door ruige hond of derden, en niet bewaard worden door ruige hond.</p>
 <p>Ook zo&rsquo;n mooi formulier voor je praktijk? <a href="/ruigehond.php">Meer informatie</a></p>
 </footer>';
 // end

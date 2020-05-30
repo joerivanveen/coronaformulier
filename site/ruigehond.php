@@ -118,7 +118,7 @@
         }
 
         li {
-            margin: 0 0 .3rem 1rem;
+            margin: 0 0 .1rem 1rem;
             list-style-type: circle;
         }
 
@@ -191,7 +191,8 @@
     <article>
         <section>
             <h1>Coronaformulier voor (kleine) praktijk</h1>
-            <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidcheck (triage) af te nemen en nogmaals de
+            <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidcheck (triage) af te nemen en
+                nogmaals de
                 maatregelen tegen corona onder de aandacht te brengen.</p>
             <h2>Online formulier voor de gezondheidcheck</h2>
             <p>Mijn vrouw is masseuse met een eigen praktijk. Met iedereen bellen een dag van tevoren om de vragenlijst
@@ -199,19 +200,21 @@
                 sociaal is.
                 Ze maakte een formulier in Word maar dit werd een rompslomp, klanten gingen het formulier printen,
                 met pen invullen en dan een foto terugsturen...</p>
-            <p>Ik heb dit online coronaformulier gemaakt dat zij naar elke cliënt kan appen of e-mailen, zodat zij makkelijk en
-                klantvriendelijk aan de richtlijnen van het RIVM kan voldoen. Het staat bovendien heel netjes naar klanten toe.</p>
+            <p>Ik heb dit online coronaformulier gemaakt dat zij naar elke cliënt kan appen of e-mailen, zodat zij
+                makkelijk en
+                klantvriendelijk aan de richtlijnen van het RIVM kan voldoen. Het staat bovendien heel netjes naar
+                klanten toe. Het is AVG-proof inclusief <a target="_blank" href="/data-verwerkersovereenkomst.pdf">data verwerkersovereenkomst</a>.</p>
             <p><a href="/ruigehond">Voorbeeld coronaformulier</a></p>
             <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers,
                 fysiotherapeuten en andere kleine praktijken waarbij 1 op 1 contact tussen behandelaar en cliënt is.</p>
         </section>
         <section>
             <h2>Eigen formulier online</h2>
-            <p>Wil jij ook zo'n formulier gebruiken voor je praktijk? Stuur mij een e-mail:
+            <p>Wil jij ook zo'n formulier gebruiken voor je praktijk? Stuur mij een e-mail
                 <script>
                     function ruigehond() {
                         var domain = 'ruigehond.nl', apenstaart = '@';
-                        return '<span><a href="mailto:hallo' + apenstaart + domain + '">E-mail: hallo' + apenstaart + domain + '</a></span>';
+                        return '<span>(<a href="mailto:hallo' + apenstaart + domain + '">hallo' + apenstaart + domain + '</a>)</span>';
                     }
 
                     document.write(ruigehond());
@@ -249,7 +252,13 @@
                 <li>Beschermd tegen spam door Google recaptcha (nieuwste versie)</li>
                 <li>Geen statistieken of cookies verder, gebruik is 100% anoniem</li>
                 <li>Werking en interactie voldoen aan huidige toegankelijkheids richtlijnen</li>
-                <li>Er wordt niets opgeslagen, dus AVG-proof</li>
+                <li>AVG-proof:
+                    <ul>
+                        <li>Er wordt niets opgeslagen</li>
+                        <li>Bekijk de standaard <a target="_blank" href="/data-verwerkersovereenkomst.pdf">data verwerkersovereenkomst</a> die je sluit met mij</li>
+                        <li>Je eigen data verwerkersovereenkomst is in veel gevallen ook akkoord</li>
+                    </ul>
+                </li>
             </ul>
         </section>
     </article>
