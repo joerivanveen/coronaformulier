@@ -246,7 +246,7 @@ function echo_question(string $label, string $text, string $described_by = '')
 // the contents
 echo ' 
 <section>
-<h1>Gezondsheidcheck ';
+<h1>Gezondheidcheck ';
 echo $a['name'];
 echo '</h1>
 <p>Geachte heer / mevrouw,</p>

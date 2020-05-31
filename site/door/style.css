@@ -1,0 +1,228 @@
+/**
+ * Reset
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: inherit;
+    line-height: 1.6em;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    color: #333;
+}
+fieldset, legend {
+    display: inline;
+    vertical-align: top;
+}
+
+:focus { /* remember to define focus styles! */
+    outline: 0;
+}
+
+img {
+    display: block;
+    line-height: 0;
+    border: 0;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 700;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-size: 12pt;
+}
+
+input[type="text"]:focus {
+    background-image:url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22%23E7511E%22%20d%3D%22M24%201.5L.31%2012.19%2024%2022.89z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right -12px top 50%, 0 0;
+}
+input[type="radio"]:focus {
+    outline: solid rgb(255,89,32) 4px;
+}
+
+header, footer, section, .message {
+    padding: 0 1rem;
+    max-width: 800px;
+}
+header {
+    margin-top: 2rem;
+}
+footer {
+    margin: 2rem 0;
+    font-size: 80%;
+}
+
+p, h2, h3, h4, h5, h6 {
+    margin-top: .8rem;
+}
+
+div.message {
+    background-color: #f0f0f0;
+    margin: 1rem;
+    padding: 1rem;
+}
+.error {
+    background-color: #c00;
+    color: #fff;
+    font-weight: bold;
+    padding: .5rem;
+    font-size: 125%;
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+    margin-top: 0;
+    margin-bottom: .8rem;
+}
+
+.describedby {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 125%;
+    font-weight: bold;
+}
+h1, h2, h3, strong {
+    color: rgb(255,89,32);
+}
+section {
+    margin-top: 1.6rem;
+}
+
+ul, ol {
+    padding-left: 1.4rem;
+}
+/* reset form */
+textarea,
+/*input[type="radio"],*/
+input[type="submit"],
+input[type="text"],
+input[type="date"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    background-color: #fff;
+    padding: 5px;
+    font-size: 15px;
+    border: 2px solid #999;
+}
+textarea,
+input[type="text"],
+input[type="date"] {
+    width: 30rem;
+    max-width: 80%;
+    height: 2rem;
+    margin: .2rem;
+    display: block;
+}
+
+img {
+    width: 300px;
+    max-width: 80%;
+    margin-top: 1rem;
+}
+
+ol li {
+    margin-bottom: .6rem;
+}
+ol label {
+    display: block;
+}
+
+#validation_check,
+#validation_cross {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#validation_check *,
+#validation_cross * {
+    color: #fff;
+    opacity: .9;
+}
+#validation_check {
+    background-color: #0a0;
+}
+#validation_cross {
+    background-color: #c52;
+}
+#validation_check > div,
+#validation_cross > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    text-align: center;
+}
+#validation_check > div > strong,
+#validation_cross > div > strong {
+    font-size: 40vw;
+    display: block;
+}
+input[type="submit"] {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 0;
+    padding: 10px;
+    border-radius: 15px;
+    transition: all .2s; /* margin-top .2s, margin-bottom .2s;*/
+}
+input[type="submit"]:focus,
+input[type="submit"]:hover {
+    margin-top: -5px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 10px 0 #aaa;
+}
+.notice {
+    background-color: #ffc;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+
+@media (max-width: 888px) {
+    /* and (max-height: 650px)*/
+    body,
+    html {
+        font-size: 14pt;
+    }
+
+    h1, h2 {
+        font-size: 140%;
+    }
+}
