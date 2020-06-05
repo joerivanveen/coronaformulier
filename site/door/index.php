@@ -15,11 +15,24 @@ require 'languages.php';
 // head
 echo '<!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>';
 echo $a['name'];
-echo ' ~ </title><meta name="description" content="Corona maatregelen en gezondheidcheck cliënt - ';
+echo ' ~ gezondheidcheck formulier</title><meta name="description" content="Instant gezondheidcheck formulier van ';
 echo $a['name'];
-echo ' - online invullen, voldoe aan de eisen van het RIVM mbt corona."/><link rel="canonical" href="https://coronaformulier.nl/';
+echo ' - online invullen, meteen antwoord, gebaseerd op informatie van RIVM."/><link rel="canonical" href="https://coronaformulier.nl/door/';
 echo $company;
-echo '"/><link rel="stylesheet" href="/door/style.css?version=0.1"/>';
+echo '"/><meta property="og:url" content="https://coronaformulier.nl/door/';
+echo $company;
+echo '"/><meta property="og:site_name" content="Coronaformulier ';
+echo $company;
+echo '"/><meta property="og:title" content="';
+echo $a['name'];
+echo ' ~ coronaformulier"/><meta property="og:type" content="website"/><meta property="og:description" content="Gezondheidcheck aan de deur ivm corona / COVID-19 bij ';
+echo $a['name'];
+echo '."/> <meta property="og:image" content="https://coronaformulier.nl/img/dummy-V2.jpg"/><meta property="og:image:width" content="736"/><meta property="og:image:height" content="736"/><meta property="og:image:secure_url" content="https://coronaformulier.nl/img/dummy-V2.jpg"/><link rel="stylesheet" href="/door/style.css?version=0.2"/><style type="text/css">h1, h2, h3, strong {color: #';
+echo $a['color'];
+echo ';} input[type="radio"]:focus { outline: solid #';
+echo $a['color'];
+echo ' 4px; }</style>';
+if (isset($a['style'])) echo '<style type="text/css">' . $a['style'] . '</style>';
 ?>
     <script>
         function ruigehond_setup() {
@@ -84,12 +97,12 @@ function echo_question(string $label, bool $right_answer, string $described_by =
     if (true === $right_answer) {
         echo '" data-valid="1';
     }
-    echo '" value="True"> ' . __('Ja') . '</label><label><input type="radio" name="';
+    echo '" value="True"> ' . __('yes') . '</label><label><input type="radio" name="';
     echo $label;
     if (false === $right_answer) {
         echo '" data-valid="1';
     }
-    echo '" value="False"> ' . __('Nee') . '</label></fieldset>';
+    echo '" value="False"> ' . __('no') . '</label></fieldset>';
     if (isset($described_by_id)) {
         echo '<p class="describedby" id="';
         echo $described_by_id;
@@ -100,40 +113,31 @@ function echo_question(string $label, bool $right_answer, string $described_by =
     echo '</li>';
 }
 // the contents
+echo '<img src="/img/' . $a['logo'] . '" alt="logo"/>';
 echo ' 
 <form method="post" id="the_form">
-<section>
-<h1>Gezondheidcheck ';
-echo $a['name'];
-echo '</h1>
-<p><div class="notice">Beantwoord de vragen voor uw huidige gezelschap</div></p>
-<p>Uw antwoorden worden niet verzonden of opgeslagen.<br/>Toon het resultaat aan ons personeel bij het eerste contact.</p>
+<section><h1>';
+echo __('title');
+echo '</h1><div>';
+echo str_replace('{{name}}', $a['name'], str_replace('{{sign}}', $a['sign'], __($a['text'])));
+echo '</div></section>
+<section><ol>';
+$array = array_keys($a['questions']);
+$last_key = end($array);
+foreach ($a['questions'] as $question=>$right_answer) {
+    if ($question === $last_key) echo '<h3>' . __('controlevraag_h') . '</h3>';
+    echo_question($question, $right_answer);
+}
+echo '</ol></form>
 </section>
-<section>
-<ol start="1">';
-echo_question('milde_klachten', false);
-echo_question('huisgenoot', false);
-echo_question('coronavirus_gehad', false);
-echo_question('huisgenoot_coronavirus_gehad', false);
-echo_question('thuisisolatie', false);
-echo '
-</ol>
-</section>
-<section>
-<h3>Controlevraag</h3>
-<ol start="6">';
-echo_question('controlevraag', true);
-echo '
-</ol>
-<p>Alleen samen kunnen we corona de baas.<br/>
-<strong>Blijf gezond!</strong><br/>';
-echo $a['sign'];
-echo '</p>
-</form>
-</section>
-<footer>
-<p>Ook zo&rsquo;n mooi formulier voor je gelegenheid? <a href="https://coronaformulier.nl/ruigehond.php">Meer informatie</a></p>
+<footer>';
+echo __('text_end');
+echo '<p>Ook zo’n formulier voor je gelegenheid? <a href="https://coronaformulier.nl/ruigehond.php">Meer info</a></p>
 </footer>';
-echo '<div id="validation_check"><div><strong>OK</strong>'.$a['name'].'</div></div><div id="validation_cross"><div><strong>×</strong>'.$a['name'].'</div></div>';
+echo '<div id="validation_check"><div><strong>OK</strong>';
+echo $a['name'];
+echo '</div></div><div id="validation_cross"><div><strong>×</strong>Geen toegang<br/>';
+echo $a['name'];
+echo '</div></div>';
 // end
 echo '</body></html>';

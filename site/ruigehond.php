@@ -130,7 +130,21 @@
         a,
         a:active,
         a:visited {
-            color: rgba(255, 89, 32, 1);
+            color: rgb(255, 89, 32);
+        }
+        a.button {
+            background-color: rgb(255, 89, 32);
+            border-radius: .5em;
+            padding: .5em 1em;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all .2s; /* margin-top .2s, margin-bottom .2s;*/
+        }
+        a.button:focus,
+        a.button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 10px 0 #aaa;
         }
 
         @media (max-width: 1200px) {
@@ -181,36 +195,26 @@
 <main>
     <aside>
         <img src="/img/Joeri-van-Veen.jpg" alt="Foto van Joeri van Veen"/>
-        <p>Hallo, ik ben Joeri van Veen. Dit formulier heb ik gemaakt voor mijn vrouw Nicolien, zodat ze
-            klantvriendelijk en makkelijk kan voldoen aan deze eisen van het RIVM.</p>
-        <p>Terwijl ik het maakte dacht ik: meer mensen gaan dit nodig hebben, om hun eigen leven en dat van hun cliënten
-            makkelijker te maken. Daarom bied ik het aan tegen een kleine vergoeding.</p>
-        <p>Hopelijk helpt het jou ook!</p>
+        <p>Hallo, ik ben Joeri van Veen. Deze formulieren heb ik gemaakt voor vrienden die werkzaam zijn in contactberoepen.</p>
+        <p>Terwijl ik bezig was dacht ik: niet alleen de mensen die ik ken hebben dit nodig. Daarom bied ik de formulieren aan tegen een kleine vergoeding voor het instellen.</p>
         <p>Groet, Joeri</p>
     </aside>
     <article>
         <section>
-            <h1>Coronaformulier voor (kleine) praktijk</h1>
-            <p>De overheid vraagt om voor elke afspraak met een cliënt een gezondheidcheck (triage) af te nemen en
-                nogmaals de
-                maatregelen tegen corona onder de aandacht te brengen.</p>
-            <h2>Online formulier voor de gezondheidcheck</h2>
-            <p>Mijn vrouw is masseuse met een eigen praktijk. Met iedereen bellen een dag van tevoren om de vragenlijst
-                en de maatregelen door te nemen ging al meteen heel veel tijd kosten, vooral omdat Nicolien ook heel
-                sociaal is.
-                Ze maakte een formulier in Word maar dit werd een rompslomp, klanten gingen het formulier printen,
-                met pen invullen en dan een foto terugsturen...</p>
-            <p>Ik heb dit online coronaformulier gemaakt dat zij naar elke cliënt kan appen of e-mailen, zodat zij
-                makkelijk en
-                klantvriendelijk aan de richtlijnen van het RIVM kan voldoen. Het staat bovendien heel netjes naar
-                klanten toe. Het is AVG-proof inclusief <a target="_blank" href="/data-verwerkersovereenkomst.pdf">data verwerkersovereenkomst</a>.</p>
-            <p><a href="/ruigehond">Voorbeeld coronaformulier</a></p>
-            <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers,
-                fysiotherapeuten en andere kleine praktijken waarbij 1 op 1 contact tussen behandelaar en cliënt is.</p>
+            <h1>Coronaformulier</h1>
+            <p>Er zijn twee varianten van het formulier:</p>
+            <h2>Kleine praktijk</h2>
+            <p>Dit is het oorspronkelijke formulier dat ik voor mijn vrouw (zij heeft een <a href="https://feelactive.nl">massagepraktijk</a>) maakte. Zij appt een dag van te voren de link naar haar klanten en ontvangt de antwoorden per e-mail. Het is AVG-proof inclusief <a target="_blank" href="/data-verwerkersovereenkomst.pdf">data verwerkersovereenkomst</a> en beschermd tegen spam.</p>
+            <p><a href="/ruigehond" class="button">Voorbeeld e-mail formulier</a></p>
+            <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers, fysiotherapeuten, masseurs en andere één op één contactberoepen.</p>
+            <h2>Triage aan de deur</h2>
+            <p>Op verzoek heb ik een compacte variant gemaakt die het resultaat gelijk laat zien. Plaats een QR code die dit formulier oproept bij de ingang van je etablissement. Mensen kunnen gelijk aantonen dat ze naar binnen mogen. Zo heb jij aan je plicht van triage voldaan zonder dat je personeel tijd kwijt is met steeds dezelfde vragen stellen.</p>
+            <p><a href="/door/ruigehond" class="button">Voorbeeld direct formulier</a></p>
+            <p>Geschikt voor o.a. cafés, restaurants, hotels, en andere horecagelegenheden.</p>
         </section>
         <section>
-            <h2>Eigen formulier online</h2>
-            <p>Wil jij ook zo'n formulier gebruiken voor je praktijk? Stuur mij een e-mail
+            <h2>Je eigen formulier online</h2>
+            <p>Wil jij ook zo'n formulier gebruiken voor je bedrijf? Stuur mij een e-mail
                 <script>
                     function ruigehond() {
                         var domain = 'ruigehond.nl', apenstaart = '@';
@@ -222,29 +226,18 @@
                 met daarin:
             </p>
             <ul>
+                <li>Welk formulier je wilt (e-mail, of direct)</li>
                 <li>Je praktijknaam en adres</li>
-                <li>Het e-mailadres waar je de formulieren op wilt ontvangen</li>
+                <li>Het e-mailadres waar je de formulieren op wilt ontvangen (indien van toepassing)</li>
                 <li>Het logo van je praktijk en evt. een huisstijl-kleur</li>
                 <li>De url van je website</li>
                 <li>Je eigen naam waarmee het formulier afsluit</li>
             </ul>
-            <p>Ik stuur een factuur van <span>€ 25</span> ex btw eenmalige bijdrage, verder niets. Het formulier blijft
-                online op
-                basis van fair use zolang we te maken hebben met corona. Gedurende die tijd houd ik het ook actueel
-                n.a.v.
-                de richtlijnen van het RIVM.</p>
+            <p>Binnen 24 uur maak ik het formulier en stuur ik de link en QR code (bij direct formulier). Hiervoor krijg je een factuur van <span>€ 95</span> ex btw eenmalige bijdrage, verder niets. Het formulier blijft
+                online op basis van fair use zolang we te maken hebben met corona. Gedurende die tijd houd ik het ook actueel
+                n.a.v. de richtlijnen van het RIVM.</p>
         </section>
-        <section>
-            <h2>Voordelen online coronaformulier:</h2>
-            <p>Ik zou dit niet gebouwd hebben als er niet een paar specifieke voordelen waren t.o.v. een tabel <span>e-mailen</span>
-                of een document uitprinten:</p>
-            <ul>
-                <li>Eenvoudig: je appt of e-mailt steeds dezelfde link</li>
-                <li>Professionele uitstraling van je bedrijf</li>
-                <li>Super makkelijke manier om aan de eisen van het RIVM te voldoen mbt de triage</li>
-                <li>Je klant kan heel eenvoudig de verplichte gezondheidcheck (triage) doen</li>
-                <li>Formulier houd ik samen met Nicolien actueel n.a.v. richtlijnen RIVM</li>
-            </ul>
+        <!--<section>
             <h2>Professioneel</h2>
             <p>Technisch is het formulier state of the art (ik lever geen half werk).</p>
             <ul>
@@ -260,7 +253,7 @@
                     </ul>
                 </li>
             </ul>
-        </section>
+        </section>-->
     </article>
 </main>
 <footer>

@@ -112,9 +112,6 @@ h3 {
     font-size: 125%;
     font-weight: bold;
 }
-h1, h2, h3, strong {
-    color: rgb(255,89,32);
-}
 section {
     margin-top: 1.6rem;
 }
@@ -150,7 +147,7 @@ input[type="date"] {
 img {
     width: 300px;
     max-width: 80%;
-    margin-top: 1rem;
+    margin: 1rem;
 }
 
 ol li {
@@ -158,6 +155,10 @@ ol li {
 }
 ol label {
     display: block;
+    margin-top: .4em;
+    font-weight: 600;
+    background-color: #f0f0f0;
+    width: 200px;
 }
 
 #validation_check,
@@ -178,7 +179,7 @@ ol label {
     background-color: #0a0;
 }
 #validation_cross {
-    background-color: #c52;
+    background-color: #a00;
 }
 #validation_check > div,
 #validation_cross > div {
@@ -191,7 +192,7 @@ ol label {
 }
 #validation_check > div > strong,
 #validation_cross > div > strong {
-    font-size: 40vw;
+    font-size: 20vw;
     display: block;
 }
 input[type="submit"] {
