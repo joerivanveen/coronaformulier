@@ -203,14 +203,14 @@
         <section>
             <h1>Coronaformulier</h1>
             <p>Er zijn twee varianten van het formulier:</p>
-            <h2>Kleine praktijk</h2>
-            <p>Dit is het oorspronkelijke formulier dat ik voor mijn vrouw (zij heeft een <a href="https://feelactive.nl">massagepraktijk</a>) maakte. Zij appt een dag van te voren de link naar haar klanten en ontvangt de antwoorden per e-mail. Het is AVG-proof inclusief <a target="_blank" href="/data-verwerkersovereenkomst.pdf">data verwerkersovereenkomst</a> en beschermd tegen spam.</p>
-            <p><a href="/ruigehond" class="button">Voorbeeld e-mail formulier</a></p>
-            <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers, fysiotherapeuten, masseurs en andere één op één contactberoepen.</p>
             <h2>Triage aan de deur</h2>
             <p>Op verzoek heb ik een compacte variant gemaakt die het resultaat gelijk laat zien. Plaats een QR code die dit formulier oproept bij de ingang van je etablissement. Mensen kunnen gelijk aantonen dat ze naar binnen mogen. Zo heb jij aan je plicht van triage voldaan zonder dat je personeel tijd kwijt is met steeds dezelfde vragen stellen.</p>
             <p><a href="/door/ruigehond" class="button">Voorbeeld direct formulier</a></p>
             <p>Geschikt voor o.a. cafés, restaurants, hotels, en andere horecagelegenheden.</p>
+            <h2>Kleine praktijk</h2>
+            <p>Dit is het oorspronkelijke formulier dat ik voor mijn vrouw (zij heeft een <a href="https://feelactive.nl">massagepraktijk</a>) maakte. Zij appt een dag van te voren de link naar haar klanten en ontvangt de antwoorden per e-mail. Het is AVG-proof inclusief <a target="_blank" href="/data-verwerkersovereenkomst.pdf">data verwerkersovereenkomst</a> en beschermd tegen spam.</p>
+            <p><a href="/ruigehond" class="button">Voorbeeld e-mail formulier</a></p>
+            <p>De tekst en vragen zijn overgenomen van het RIVM. Dit formulier is geschikt voor bijv. kappers, fysiotherapeuten, masseurs en andere één op één contactberoepen.</p>
         </section>
         <section>
             <h2>Je eigen formulier online</h2>
@@ -226,12 +226,12 @@
                 met daarin:
             </p>
             <ul>
-                <li>Welk formulier je wilt (e-mail, of direct)</li>
-                <li>Je praktijknaam en adres</li>
+                <li>Welk formulier je wilt (direct of e-mail)</li>
+                <li>Je bedrijfsnaam en adres</li>
                 <li>Het e-mailadres waar je de formulieren op wilt ontvangen (indien van toepassing)</li>
-                <li>Het logo van je praktijk en evt. een huisstijl-kleur</li>
+                <li>Het logo van je bedrijf en evt. een huisstijl-kleur</li>
                 <li>De url van je website</li>
-                <li>Je eigen naam waarmee het formulier afsluit</li>
+                <li>De ondertekening waarmee het formulier afsluit</li>
             </ul>
             <p>Binnen 24 uur maak ik het formulier en stuur ik de link en QR code (bij direct formulier). Hiervoor krijg je een factuur van <span>€ 95</span> ex btw eenmalige bijdrage, verder niets. Het formulier blijft
                 online op basis van fair use zolang we te maken hebben met corona. Gedurende die tijd houd ik het ook actueel
